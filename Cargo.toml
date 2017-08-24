@@ -1,0 +1,10 @@
+[package]
+name = "vak"
+version = "0.1.0"
+authors = ["Roy van der Vegt <Royvandervegt@gmail.com>"]
+
+[dependencies]
+cgmath = "0.15.0"
+glium = "0.17.0"
+lazy_static = "0.2.8"
+png = "0.9.0"

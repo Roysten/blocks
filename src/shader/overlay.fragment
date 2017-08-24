@@ -1,0 +1,14 @@
+#version 330
+out vec4 f_color;
+
+uniform vec2 res;
+
+void main() {
+	vec2 midpoint = res.xy * 0.5;
+	float radius = min(res.x, res.y) * 0.005;
+	float inner_radius = min(res.x, res.y) * 0.003;
+	float dist = length(gl_FragCoord.xy - midpoint);
+	float circle = smoothstep(radius - 1, radius + 1, dist);
+	float circle2 = smoothstep(inner_radius - 1, inner_radius + 1, dist) - circle;
+	f_color = vec4(vec3(1), circle2 * 0.5);
+}

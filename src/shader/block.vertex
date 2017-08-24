@@ -1,0 +1,15 @@
+#version 330
+in vec3 pos;
+in vec3 norm;
+in vec2 tex_coords;
+in vec3 translation;
+out vec3 v_color;
+out vec2 v_tex_coords;
+
+uniform mat4 mvp_matrix;
+
+void main() {
+	gl_Position = mvp_matrix * (vec4(pos + translation, 1.0));
+	v_color = abs(norm);
+	v_tex_coords = tex_coords;
+}
